@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js no-svg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+  <div class="box">
+  <button>Start</button>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var box = $('.box');
+      var stat = 'start';
+      $('button').click(function() {
+        if(stat == 'start') {
+          box.append('<div class="ball"></div>');
+          stat = 'stop';
+        }else {
+          box.find('.ball').remove();
+          stat = 'start';
+        }
+        $(this).text(stat);
+      });
+    });
+    
+  </script>
+</body>
+</html>
